@@ -1083,9 +1083,109 @@ public class Main {
             vidaJugador -= 50;
             imprimirConRetardo("Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
         }
+    imprimirConRetardo("--- Parece que has sido la primera persona en superar este minijuego\n", 30);
+        if (esGrupoYanina) {
+            imprimirConRetardo("--- Yannina deberia seguir jugando\n", 30);
+
+        } else {
+            imprimirConRetardo("--- No esperas a nadie, deberias seguir ---\n", 15);
+        }
+        remYSecuestro(sitio);
+    }
+        public static void remYSecuestro (Scanner sitio) throws InterruptedException {
+        imprimirConRetardo("--- Parece que hay alguien más llegando al sitio---\n",15);
+        imprimirConRetardo("--- Es una chica que parece nerviosa y temblorosa ---\n",15);
+        imprimirConRetardo("--- Va a hacer ahora el minijuego del trivia ---\n",15);
+        imprimirConRetardo("--- Parece que esa chica se esta acercando a ti ---\n",15);
+        imprimirConRetardo("?: ¿Hola...?\n",15);
+        imprimirConRetardo("?: Eres la primera persona que encuentro aquí\n",15);
+        imprimirConRetardo("?: No se que esta pasando\n",15);
+        imprimirConRetardo("?: ¿Podrías ayudarme?, Me llamo Rem\n",15);
+        limpiarPantalla();
+        imprimirConRetardo("¿Qué decides hacer?\n", 25);
+        imprimirConRetardo("  [1] Ayudar a REM antes de que juegue\n", 20);
+        imprimirConRetardo("  [2] No ayudarla y mantenerte al margen\n", 20);
+        System.out.print("Elige una opción (1-2): ");
+        int decisionRem = 2;
+        if (sitio.hasNextInt()) {
+            decisionRem = sitio.nextInt();
+        } else {
+            sitio.next();
+        }
+        limpiarPantalla();
+        if (decisionRem == 1) {
+            esGrupoRem = true;
+            imprimirConRetardo(VERDE + "--- Ha decido ayudar a Rem ---\n" + RESET, 15);
+            imprimirConRetardo( "--- Le cuentas acerca del siguiente minijuego el trivia ---\n" , 15);
+            imprimirConRetardo( "--- Le das consejos y como responder ---\n" , 15);
+            imprimirConRetardo("REM : ¡Muchísimas gracias!  \n", 15);
+            imprimirConRetardo("REM : Porfavor acepta esto como agradecimiento \n", 15);
+            agregarAlInventario("Poción +70 DA");
+        } else {
+            imprimirConRetardo("--- Decides no intervenir y observas desde la distancia ---\n", 15);
+            imprimirConRetardo("--- Tras terminar, REM sigue su propio camino ---\n", 15);
+        }
+        if (esGrupoYanina){
+            imprimirConRetardo("--- Por fin ves a la gente salir, debes esperar a Yanina ---\n", 15);
+            imprimirConRetardo("--- Parece que por fin esta saliendo---\n", 15);
+            imprimirConRetardo("Yanina:¡Aqui!\n", 15);
+            imprimirConRetardo("Yanina:¡He conseguido superar el trivia!\n", 15);
+            imprimirConRetardo("Yanina: Venga solo quedan 2 minijuegos más para salir de aquí, decidamos\n", 15);
+        }else {
+            imprimirConRetardo("--- No tienes tiempo que perder ahora ---\n", 15);
+
+        }
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "¿Qué deberías hacer ahora?" + RESET + "\n");
+
+        imprimirConRetardo("  [1] Descansar (dormir)\n", 20);
+        imprimirConRetardo("  [2] Seguir con nuestro camino\n", 20);
+        System.out.print("Elige una opción (1-2): ");
+
+        int decisionCamino = 2;
+        if (sitio.hasNextInt()) {
+            decisionCamino = sitio.nextInt();
+        } else {
+            sitio.next();
+        }
+
+        if (decisionCamino == 1) {
+            limpiarPantalla();
+            animacionCarga("--- Buscas una zona tranquila cerca del agua para descansar ---");
+
+
+            limpiarPantalla();
+            animacionCarga("--- Tras el rato junto al agua, te recuestas y duermes para recuperar energías ---");
+            vidaJugador = Math.min(100, vidaJugador + 20);
+            imprimirConRetardo(VERDE + "[+] Has descansado bien. Tu vida actual es: " + vidaJugador + "/100\n" + RESET, 30);
+            pausa(2000);
+        }
+        limpiarPantalla();
+        animacionCarga("--- Seguís avanzando con nuestro camino por el recinto ---");
+        imprimirConRetardo("--- El siguiente minijuego parece estar muy cerca a unos 150 metros ---\n", 15);
+        limpiarPantalla();
+
+        imprimirConRetardo(ROJO + "??? : Vaya parece que sois los primeros en llegar\n" + RESET, 15);
+        imprimirConRetardo("???: Me presento, me llamo kyle\n", 15);
+        imprimirConRetardo("Kyle: Este es el penúltimo minijuego que tenéis que jugar \n", 15);
+        if (esGrupoYanina) {
+            imprimirConRetardo("--- Antes de que puedas reaccionar, Kyle aprovecha un descuido, secuestra a Yanina y la cuelga de una estructura ---\n", 35);
+            imprimirConRetardo(AMARILLO + "Kyle : 'Si quieres salvarla, tendrás que jugar al famoso ahorcado'\n\n" + RESET, 15);
+        } else {
+            imprimirConRetardo("--- Antes de que puedas reaccionar, Kyle secuestra a uno de los participantes ---\n", 15);
+            imprimirConRetardo("--- Parece aquella chica que viste el incio en el centro comercial ---\n", 15);
+            imprimirConRetardo(AMARILLO + "Kyle : 'Si quieres salvarla, tendrás que jugar al famoso ahorcado'\n\n" + RESET, 15);
+
+        }
+
 
     }
-    
+
+
+
 }
+
+    
 
 
