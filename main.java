@@ -4,7 +4,7 @@ package menuInicio;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Main {
+public class main {
 
     public static final String RESET = "\u001B[0m";
     public static final String CYAN = "\u001B[36m";
