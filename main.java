@@ -1080,8 +1080,8 @@ public class Main {
             vidaJugador = Math.min(100, vidaJugador + 30);
         } else {
             imprimirConRetardo(ROJO + "No has conseguido los 5 puntos necesarios. El sistema emite una descarga eléctrica.\n" + RESET, 30);
-            vidaJugador -= 20;
-            imprimirConRetardo("Pierdes 20 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
+            vidaJugador -= 50;
+            imprimirConRetardo("Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
         }
 
     }
