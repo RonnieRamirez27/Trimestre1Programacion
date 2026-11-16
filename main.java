@@ -1,9 +1,9 @@
 package menuInicio;
 
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
-public class main {
+public class Definitivo {
 
     public static final String RESET = "\u001B[0m";
     public static final String CYAN = "\u001B[36m";
@@ -817,13 +817,13 @@ public class main {
                     int tipoObjeto = sc.nextInt();
                     if (tipoObjeto == 1) {
                         if (tieneObjeto("Pescado cocinado")){
-                        eliminarDelInventario("Pescado cocinado");
-                        vidaJugador = Math.min(100, vidaJugador + 30);
-                        imprimirConRetardo(VERDE + "Has comido el pescado cocinado. Nueva vida (DV): " + vidaJugador + "/100\n" + RESET, 30);
-                        pausa(2000);
+                            eliminarDelInventario("Pescado cocinado");
+                            vidaJugador = Math.min(100, vidaJugador + 30);
+                            imprimirConRetardo(VERDE + "Has comido el pescado cocinado. Nueva vida (DV): " + vidaJugador + "/100\n" + RESET, 30);
+                            pausa(2000);
                         }else if (!tieneObjeto("Pescado cocinado")){
-                        imprimirConRetardo(ROJO + "No tienes ningún pescado cocinado en el inventario.\n" + RESET, 30);
-                    }}
+                            imprimirConRetardo(ROJO + "No tienes ningún pescado cocinado en el inventario.\n" + RESET, 30);
+                        }}
                     else if (tipoObjeto == 2) {
                         if (tieneObjeto("Analgésico")) {
                             eliminarDelInventario("Analgésico");
@@ -846,11 +846,11 @@ public class main {
     }
     public static void elegirAccionDespuesDeJuego(Scanner sitio) throws InterruptedException {
         limpiarPantalla();
-        System.out.println(AMARILLO + "--------------------------------------");
-        System.out.println("|           ¿QUÉ DESEAS HACER?          |");
-        System.out.println("--------------------------------------" + RESET + "\n");
 
-        imprimirConRetardo("Has terminado los enfrentamientos en el centro comercial.\n", 30);
+        System.out.println("|           ¿QUÉ DESEAS HACER?          |");
+
+
+        imprimirConRetardo("Has terminado los enfrentamientos en el hotel.\n", 30);
         imprimirConRetardo("  [1] Descansas y vas a buscar comida\n", 25);
         imprimirConRetardo("  [2] Avanzar directamente hasta el siguiente minijuego\n", 25);
         System.out.print("Elige una opción (1-2): ");
@@ -909,7 +909,7 @@ public class main {
                 limpiarPantalla();
                 animacionCarga("Decides no perder tiempo y avanzas de inmediato");
                 imprimirConRetardo("--- Ignoras el cansancio y sigues avanzando por la oscura ciudad ---\n", 35);
-               limpiarPantalla();
+                limpiarPantalla();
             }
         }
 
@@ -920,10 +920,10 @@ public class main {
         imprimirConRetardo("--- El siguiente minijuego esta a 2km ---\n", 15);
         imprimirConRetardo("--- No pierdes tiempo y te pones a caminar ---\n", 15);
 
-         limpiarPantalla();
+        limpiarPantalla();
         iniciarTrivial(sitio);
     }
-     public static void iniciarTrivial(Scanner sitio) throws InterruptedException {
+    public static void iniciarTrivial(Scanner sitio) throws InterruptedException {
 
         limpiarPantalla();
         imprimirConRetardo("--- Estas caminando, ya queda poco para llegar  ---\n", 15);
@@ -1082,16 +1082,17 @@ public class main {
             vidaJugador -= 50;
             imprimirConRetardo("Pierdes 50 días de vida (DV). Vida actual: " + vidaJugador + "/100\n", 30);
         }
-    imprimirConRetardo("--- Parece que has sido la primera persona en superar este minijuego\n", 30);
+        imprimirConRetardo("--- Parece que has sido la primera persona en superar este minijuego\n", 30);
         if (esGrupoYanina) {
             imprimirConRetardo("--- Yanina deberia seguir jugando\n", 30);
 
         } else {
             imprimirConRetardo("--- No esperas a nadie, deberias seguir ---\n", 15);
         }
+        menuCuracionPostPartida(sitio);
         remYSecuestro(sitio);
     }
-        public static void remYSecuestro (Scanner sitio) throws InterruptedException {
+    public static void remYSecuestro (Scanner sitio) throws InterruptedException {
         imprimirConRetardo("--- Parece que hay alguien más llegando al sitio---\n",15);
         imprimirConRetardo("--- Es una chica que parece nerviosa y temblorosa ---\n",15);
         imprimirConRetardo("--- Va a hacer ahora el minijuego del trivia ---\n",15);
@@ -1176,11 +1177,11 @@ public class main {
             imprimirConRetardo("--- Parece aquella chica que viste el incio en el centro comercial ---\n", 15);
             imprimirConRetardo(AMARILLO + "Kyle : 'Si quieres salvarla, tendrás que jugar al famoso ahorcado'\n\n" + RESET, 15);
         }
-            jugarAhorcado(sitio);
-            eventoFinalKyle(sitio);
+        jugarAhorcado(sitio);
+        eventoFinalKyle(sitio);
     }
 
-      public static boolean jugarAhorcado(Scanner scanner) throws InterruptedException {
+    public static boolean jugarAhorcado(Scanner scanner) throws InterruptedException {
         limpiarPantalla();
 
         System.out.println("|             AHORCADO           |");
@@ -1190,7 +1191,7 @@ public class main {
         imprimirConRetardo("Para descender la cuerda y salvarla a tiempo, debes adivinar la palabra secreta.\n\n", 30);
         pausa(2000);
 
-        String palabraSecreta = "Despierta".toLowerCase();
+        String palabraSecreta = "Despierta ahora".toLowerCase();
         char espacios = ' ';
         StringBuilder palabraMostrada = new StringBuilder();
 
@@ -1312,12 +1313,12 @@ public class main {
             else if (choosePlayer == 2) System.out.println("Elegiste: ✂️ Tijera");
 
             if (chooseRobot == 0) System.out.println("Kyle eligió: 🗒️ Papel");
-            else if (chooseRobot == 1) System.out.println("Kaiyun eligió: 🪨 Piedra");
-            else if (chooseRobot == 2) System.out.println("Kaiyun eligió: ✂️ Tijera");
+            else if (chooseRobot == 1) System.out.println("Kyle eligió: 🪨 Piedra");
+            else if (chooseRobot == 2) System.out.println("Kyle eligió: ✂️ Tijera");
 
             System.out.println();
 
-            // Lógica de resultados de tu código
+
             if (choosePlayer == chooseRobot) {
                 System.out.println(AMARILLO + "¡Empate! Kyle te obliga a elegir de nuevo." + RESET);
                 pausa(2000);
@@ -1326,16 +1327,76 @@ public class main {
                     (choosePlayer == 2 && chooseRobot == 0)) {
 
                 System.out.println(VERDE + "FELICIDADES HAS GANADO " + RESET);
-                imprimirConRetardo("Kyle: Vaya... has demostrado que tienes mucha valentía\n", 35);
+                imprimirConRetardo("Kyle: Vaya... has demostrado que tienes mucha valentía\n", 15);
+                imprimirConRetardo("Kyle: Has ganado el juego final, tienes derecho a saber la verdad\n", 15);
+                imprimirConRetardo("Kyle: Este mundo, no es otro que el Limbo\n", 15);
+                imprimirConRetardo("Kyle: El mundo entre la vida y la muerte \n", 15);
+                imprimirConRetardo("Kyle: La gente que esta en este mundo esta luchando por vivir otra vez \n", 15);
+                imprimirConRetardo("Kyle: Las personas que mueren aquí también morirán en el mundo físico \n", 15);
+                imprimirConRetardo("Kyle: Tu has logrado sobrevivir a todas las pruebas asi que puedes volver a la vida real\n", 15);
+                imprimirConRetardo("Kyle: Felicidades viajero\n", 15);
+                limpiarPantalla();
+                imprimirConRetardo("---De la nada despiertas lo primero que ves es un techo blanco ---\n", 15);
+                imprimirConRetardo("--- Recuerdas toda tu vida  ---\n", 15);
+                imprimirConRetardo("--- Empiezas a levantarte estas en un cama---\n", 15);
+                imprimirConRetardo("--- tus venas están conectadas a vías de suero---\n", 15);
+                imprimirConRetardo("--- A tu lado esta una maquina que controla las pulsaciones---\n", 15);
+                imprimirConRetardo("--- Estas en un hospital---\n", 15);
+                imprimirConRetardo("--- Parece que te encuentras perfectamente---\n", 15);
+                imprimirConRetardo("--- Te levantas de la cama---\n", 15);
+                imprimirConRetardo("--- Te quedas mirando la ventana es como si hubieses tenido un sueño muy largo---\n", 15);
+                imprimirConRetardo("--- Hay alguien más en tu habitación durmiendo profundamente---\n", 15);
+                imprimirConRetardo("--- Y su nombre es---\n", 15);
+                imprimirConRetardo("--- Yanina ---\n", 15);
                 ganoPartida = true;
                 pausa(3000);
 
             } else {
                 System.out.println(ROJO + "PIERDES EL DUELO" + RESET);
-                imprimirConRetardo("Kyle es clara vencedora...\n", 35);
-                imprimirConRetardo("Pierdes de golpe todos tus DVs y mueres...\n", 35);
-                imprimirConRetardo(ROJO + "G A M E   O V E R\n",50);
-                break;
+                imprimirConRetardo("Kyle: Vaya parece que no has estado a la altura, para poder vivir\n", 15);
+                imprimirConRetardo("Kyle: Aún asi voy a ser compasivo, porque yo también estuve en tu lugar\n", 15);
+                imprimirConRetardo("Kyle: El lugar en el que te encuentras ahora es,\n", 15);
+                imprimirConRetardo("Kyle: El limbo\n", 15);
+                imprimirConRetardo("Kyle: Los minijuegos son solo pruebas, cuantos más superes más cerca estarás\n", 15);
+                imprimirConRetardo("Kyle: Estas luchando para volver a vivir\n", 15);
+                imprimirConRetardo("Kyle: A partir de aquí tenemos dos opciones\n", 15);
+                imprimirConRetardo("Kyle: Has perdido únicamente la última batalla asi que te mereces elegir\n", 15);
+                imprimirConRetardo("Kyle: Te doy varias opciones\n", 15);
+                imprimirConRetardo("Kyle: Unirte a mi y a la gente que crea los minijuegos\n", 15);
+                imprimirConRetardo("Kyle: Esta opción significara quedarte en  este mundo para siempre\n", 15);
+                imprimirConRetardo("Kyle: La segunda opción, es morir\n", 15);
+                imprimirConRetardo("Kyle: Tu eliges\n", 15);
+
+                imprimirConRetardo("[1] Unirte a Kyle y crear los minijuegos para próximos jugadores\n",15);
+                imprimirConRetardo("[2] Aceptar tu destino\n",15);
+                System.out.println("Elige una opción 1-2:\n");
+                int eleccionFinal = 2;
+                if (sc.hasNextInt()) {
+                    eleccionFinal = sc.nextInt();
+                } else {
+                    sc.next();
+                }
+                limpiarPantalla();
+
+                if (eleccionFinal == 1){
+
+                    imprimirConRetardo(PURPLE + "--- Decides aceptar la oferta de Kyle ---\n" + RESET, 20);
+                    imprimirConRetardo("Kyle: Sabia decisión. Bienvenido al otro lado de la pantalla.\n", 20);
+                    imprimirConRetardo("Kyle: Ahora tú serás quien diseñe las pruebas para los próximos viajeros...\n", 20);
+                    imprimirConRetardo(AMARILLO + "\nFINAL ALTERNATIVO: EL NUEVO ANFITRIÓN DEL LIMBO\n" + RESET, 30);
+                    return;
+                } else{
+
+                    imprimirConRetardo(ROJO + "--- Rechazas unirte a él ---\n" + RESET, 20);
+                    imprimirConRetardo("Kyle: Respeto tu decisión... descansa en paz.\n", 20);
+                    vidaJugador = 0;
+                    imprimirConRetardo("Pierdes de golpe todos tus DVs y mueres...\n", 15);
+                    imprimirConRetardo(ROJO + "G A M E   O V E R\n",50);
+                    break;
+
+                }
+
+
             }
 
         } while (!ganoPartida);
@@ -1352,6 +1413,5 @@ public class main {
 
 }
 
-    
 
 
