@@ -85,7 +85,9 @@ Durante la aventura hay cuatro pruebas principales que el jugador debe superar:
 - **Scanner:** para recoger las decisiones y respuestas del jugador.
 - **Random:** para generar elecciones aleatorias en algunos minijuegos.
 - **Arrays:** utilizados para almacenar los objetos del inventario y organizar los tableros.
-- **ImpresionTextoConRetardo** Para que el texto de la historia y las instrucciones de las elecciones no se generen de golpe y de tiempo al seguimiento de su lectura, se ha empleado funciones de retardo y pausa. Para que no colapse el programa hemos usado "Throws Interrupted Exception"
+- **Impresión Texto Con Retardo** Para que el texto de la historia y las instrucciones de las elecciones no se generen de golpe y de tiempo al seguimiento de su lectura, se ha empleado funciones de retardo y pausa. Para que no colapse el programa hemos usado "Throws Interrupted Exception".
+- **Kit Utilizado de Java** JDK21 LTS.
+- **Animación de carga** Método en el que imprime "..." mas tiempo al cargar determinadas lineas
 
 ---
 
