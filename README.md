@@ -1,122 +1,159 @@
-# 🌑 DARK ESSENCE
+🎮 DARK ESSENCE
 
-Dark Essence es un juego de aventuras desarrollado en Java en el que el jugador despierta en un mundo extraño, aparentemente sin habitantes, y tiene que descubrir qué está pasando.
+DARK ESSENCE es un juego de aventura conversacional desarrollado en Java. El jugador despierta en un mundo aparentemente abandonado y tendrá que explorar diferentes lugares, conocer a otros personajes y superar una serie de minijuegos para intentar descubrir qué está pasando y encontrar la forma de volver a casa.
 
-A medida que avanza la historia, tendrá que explorar diferentes lugares, conseguir objetos, tomar decisiones y superar minijuegos para poder sobrevivir.
+El juego funciona mediante una consola, donde el jugador tendrá que leer los diálogos y elegir sus acciones escribiendo números.
 
-El proyecto todavía está en desarrollo, por lo que algunas partes de la historia y algunas mecánicas están pendientes de implementar.
+📖 Historia
 
-## 📖 Historia
+La aventura comienza cuando el protagonista despierta en un valle a las afueras de su ciudad. Todo parece tranquilo, pero hay algo extraño: no hay personas por ningún lado.
 
-La historia comienza cuando el protagonista despierta en un valle sin recordar exactamente cómo ha llegado hasta allí. Todo parece normal a primera vista, pero hay algo extraño: no hay nadie alrededor.
+A partir de ese momento, el jugador tendrá que investigar lo sucedido y seguir las indicaciones que aparecen durante la aventura.
 
-Después de explorar los alrededores, descubre una ciudad aparentemente abandonada y comienza a buscar respuestas.
+Por el camino podrá encontrarse con otros personajes, como Yanina y Rem, y decidir si quiere ayudarlos o continuar solo.
 
-Durante la aventura conocerá a otros personajes, como Yanina, y descubrirá que para poder regresar a casa tendrá que superar diferentes minijuegos. Sin embargo, perder no es una opción, ya que su propia vida está en juego.
+La historia va avanzando según las decisiones que tome el jugador.
 
-## 🎮 Funcionalidades implementadas
+🕹️ ¿Qué contiene el juego?
 
-Actualmente, el juego cuenta con las siguientes funciones:
+Exploración
 
-### Menú principal
-- Inicio de una nueva partida.
-- Opción para salir del juego.
-- Menús interactivos mediante la terminal.
-- Textos que aparecen progresivamente para dar más ambiente a la historia.
+Al principio de la aventura se pueden explorar diferentes lugares:
 
-### Historia y exploración
-- Introducción a la historia del juego.
-- Sistema para decidir si el personaje continúa durmiendo o se levanta.
-- Posibilidad de explorar tres zonas:
-  - Centro de la ciudad abandonada.
-  - Río.
-  - Bosque.
-- Diferentes acontecimientos dependiendo de la zona elegida.
-- Aparición del personaje Yanina.
-- Posibilidad de aceptar o rechazar formar equipo con ella.
+Ciudad abandonada: permite encontrar objetos médicos en una farmacia.
 
-### 🎒 Inventario
-- Sistema de inventario mediante un array.
-- Capacidad máxima de 10 objetos.
-- Posibilidad de recoger objetos durante la aventura.
-- Consultar los objetos que tienes guardados.
-- Eliminar objetos cuando se utilizan o se consumen.
+Río: es una zona donde se pueden conseguir recursos.
 
-Algunos objetos que se pueden conseguir actualmente son:
-- Analgésicos.
-- Vendas.
-- Pastillas.
-- Piedras.
-- Ramas.
-- Hilos.
-- Caña de pescar.
-- Pescado.
-- Pescado cocinado.
-- Llave oxidada.
+Bosque: permite recoger materiales para fabricar una caña de pescar.
 
-### 🌲 Sistema de exploración y creación
-- Recogida de materiales en el bosque.
-- Posibilidad de combinar una rama y unos hilos para fabricar una caña de pescar.
-- Sistema de pesca con diferentes posibilidades.
-- La caña tiene un máximo de 4 usos.
-- Posibilidad de conseguir pescado y cocinarlo utilizando una rama para hacer una hoguera.
+Inventario y objetos
 
-### ❤️ Sistema de vida y curación
-- El jugador comienza con 100 puntos de vida.
-- Perder una partida de tres en raya resta 50 puntos de vida.
-- Posibilidad de recuperar vida utilizando objetos del inventario.
-- El pescado cocinado recupera 30 puntos de vida.
-- Los objetos médicos recuperan 40 puntos de vida.
-- Descansar con Yanina permite recuperar 25 puntos de vida.
-- La vida máxima está limitada a 100 puntos.
+El juego cuenta con un inventario donde se guardan los objetos que se van encontrando.
 
-### ❌ Primer minijuego: Tres en raya
-- Tablero de 3x3.
-- El jugador utiliza las X.
-- La máquina utiliza las O.
-- Turnos alternos entre el jugador y la máquina.
-- Comprobación de filas, columnas y diagonales para detectar al ganador.
-- Comprobación de empate.
-- El empate cuenta como derrota.
-- El jugador debe superar dos partidas para completar esta primera prueba.
+Algunos de los objetos disponibles son:
 
-## 🛠️ Tecnologías utilizadas
+Analgésicos, vendas y pastillas.
 
-- **Java:** lenguaje utilizado para desarrollar el juego.
-- **IntelliJ IDEA:** entorno de desarrollo.
-- **Scanner:** para recoger las decisiones y respuestas del jugador.
-- **Random:** para generar resultados aleatorios, como los movimientos de la máquina o la pesca.
-- **Arrays:** utilizados para almacenar los objetos del inventario y representar el tablero del tres en raya.
-- **Colores ANSI:** para diferenciar mensajes y opciones en la terminal.
-- 
+Ramas, piedras e hilos.
 
-## ▶️ Cómo ejecutar el juego
+Caña de pescar.
 
-Para ejecutar el proyecto es necesario tener instalado Java y un entorno que permita ejecutar programas Java.
+Pescado y pescado cocinado.
 
-1. Descargar o clonar el repositorio.
-2. Abrir el proyecto desde IntelliJ IDEA.
-3. Localizar la clase `Main`.
-4. Ejecutar el método `main`.
-5. Seguir las instrucciones que aparecen en la terminal.
+Llave oxidada.
 
-## 🚧 Próximas mejoras
+Botiquines y pociones.
 
-El juego todavía no está terminado. Estas son algunas de las cosas que quedan por desarrollar o mejorar:
+Algunos objetos se pueden utilizar para recuperar puntos de vida o para conseguir otros recursos.
 
-- Continuar la historia después del primer minijuego.
-- Añadir nuevos minijuegos.
-- Incorporar nuevas zonas para explorar.
-- Añadir más personajes y decisiones.
-- Ampliar el sistema de inventario.
-- Implementar nuevas formas de conseguir y utilizar objetos.
-- Seguir desarrollando el sistema de vida y supervivencia.
-- Añadir más acontecimientos dependiendo de las decisiones del jugador.
+Sistema de vida (HP)
 
-## 📌 Estado del proyecto
+El jugador empieza con 100 puntos de vida.
 
-**En desarrollo.**
+Durante la aventura puede perder vida al fallar determinados minijuegos y recuperarla utilizando objetos o descansando.
 
-Esta es una primera versión del juego en la que se está construyendo la historia principal y sus primeras mecánicas. La idea es ir añadiendo contenido poco a poco hasta completar la aventura.
+Si la vida llega a cero, el jugador no podrá continuar.
 
----
+Personajes y decisiones
+
+Durante la historia aparecen diferentes personajes con los que se puede interactuar.
+
+Algunas decisiones importantes son:
+
+Aceptar o rechazar formar equipo con Yanina.
+
+Decidir si ayudar a Rem.
+
+Elegir cuándo descansar y cuándo continuar.
+
+Administrar los objetos del inventario.
+
+Estas decisiones permiten que la aventura tenga diferentes situaciones dependiendo de lo que elija el jugador.
+
+🎯 Minijuegos
+
+Durante la aventura hay cuatro pruebas principales que el jugador debe superar:
+
+Tres en raya: el jugador se enfrenta a un robot en dos partidas. Perder una partida supone perder 50 puntos de vida.
+
+Trivial: hay que responder correctamente a seis preguntas. Para ganar se necesitan al menos cinco respuestas correctas.
+
+Ahorcado: hay que descubrir una palabra secreta antes de quedarse sin intentos. Esta prueba está relacionada con el secuestro de Yanina.
+
+Piedra, papel o tijera: es el enfrentamiento final contra Kyle. Hay que ganar para completar la aventura.
+
+💻 Tecnologías utilizadas
+
+Java: lenguaje utilizado para desarrollar el juego.
+
+IntelliJ IDEA: entorno de desarrollo utilizado para programar.
+
+Scanner: para recoger las decisiones y respuestas del jugador.
+
+Random: para generar elecciones aleatorias en algunos minijuegos.
+
+Arrays: utilizados para almacenar los objetos del inventario y organizar los tableros.
+
+📥 Cómo descargar y ejecutar el juego
+
+Para jugar a DARK ESSENCE no es necesario instalar ningún programa especial aparte de Java.
+
+1. Descargar el proyecto
+
+Entra en este repositorio de GitHub.
+
+Pulsa el botón verde Code.
+
+Selecciona Download ZIP.
+
+Descomprime el archivo descargado en tu ordenador.
+
+También puedes clonar el repositorio utilizando Git:
+
+git clone URL_DEL_REPOSITORIO
+
+2. Abrir el proyecto en IntelliJ IDEA
+
+Abre IntelliJ IDEA.
+
+Selecciona Open.
+
+Busca la carpeta del proyecto que acabas de descargar.
+
+Ábrela con IntelliJ.
+
+Comprueba que tienes configurado un JDK (se recomienda Java 17 o superior).
+
+3. Iniciar el juego
+
+Abre la carpeta src.
+
+Entra en el paquete menuInicio.
+
+Abre el archivo main.java.
+
+Busca el método main.
+
+Pulsa el botón verde de ejecutar que aparece junto al método.
+
+El juego se iniciará en la consola de IntelliJ y ya podrás comenzar tu aventura.
+
+🎮 Controles
+
+El juego se controla escribiendo las opciones que aparecen en pantalla.
+
+Introduce el número correspondiente a la acción que quieras realizar.
+
+Pulsa ENTER para confirmar.
+
+Lee los diálogos y las instrucciones antes de elegir.
+
+Administra tus objetos y puntos de vida para poder avanzar.
+
+🚧 Estado del proyecto
+
+DARK ESSENCE es un proyecto en desarrollo. Actualmente cuenta con una historia inicial, exploración, inventario, sistema de vida, decisiones entre personajes y cuatro minijuegos principales.
+
+Todavía se pueden añadir nuevas zonas, personajes, eventos y mejoras para ampliar la aventura.
+
+¡Gracias por jugar a DARK ESSENCE!
