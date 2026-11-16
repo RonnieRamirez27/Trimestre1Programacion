@@ -88,6 +88,7 @@ Algunos objetos que se pueden conseguir actualmente son:
 - **Random:** para generar resultados aleatorios, como los movimientos de la máquina o la pesca.
 - **Arrays:** utilizados para almacenar los objetos del inventario y representar el tablero del tres en raya.
 - **Colores ANSI:** para diferenciar mensajes y opciones en la terminal.
+- 
 
 ## ▶️ Cómo ejecutar el juego
 
