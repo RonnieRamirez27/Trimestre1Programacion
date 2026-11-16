@@ -1176,7 +1176,9 @@ public class main {
             imprimirConRetardo("--- Antes de que puedas reaccionar, Kyle secuestra a uno de los participantes ---\n", 15);
             imprimirConRetardo("--- Parece aquella chica que viste el incio en el centro comercial ---\n", 15);
             imprimirConRetardo(AMARILLO + "Kyle : 'Si quieres salvarla, tendrás que jugar al famoso ahorcado'\n\n" + RESET, 15);
-
+            
+                  jugarAhorcado(sitio);
+            
         }
 
 
