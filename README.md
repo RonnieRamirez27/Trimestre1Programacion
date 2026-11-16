@@ -43,9 +43,9 @@ Algunos de los objetos disponibles son:
 
 Algunos objetos se pueden utilizar para recuperar puntos de vida o para conseguir otros recursos.
 
-### Sistema de vida (HP)
+### Sistema de vida (DV)
 
-El jugador empieza con **100 puntos de vida**.
+El jugador empieza con **100 Dias de Vida**.
 
 Durante la aventura puede perder vida al fallar determinados minijuegos y recuperarla utilizando objetos o descansando.
 
@@ -101,7 +101,7 @@ Para jugar a DARK ESSENCE no es necesario instalar ningún programa especial apa
 También puedes clonar el repositorio utilizando Git:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/RonnieRamirez27/Trimestre1Programacion
 ```
 
 ### 2. Abrir el proyecto en IntelliJ IDEA
