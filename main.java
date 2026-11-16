@@ -651,7 +651,7 @@ public class Main {
         imprimirConRetardo("--- Las puertas se vuelven a abrir por lo que te diriges fuera del hotel ---\n", 20);
         if (esGrupoYanina){
             imprimirConRetardo("--- Parece que Yanina ya estaba fuera ---\n", 20);
-            imprimirConRetardo("Yanina: !"+nombreJugador+"¡\n", 20);
+            imprimirConRetardo("Yanina: ¡"+nombreJugador+"!\n", 20);
             imprimirConRetardo("Yanina: Estas bien, a ti también te han hecho jugar al 3 en raya\n", 20);
             imprimirConRetardo("Yanina: Cuando entre al hotel, conoci a otras personas\n", 20);
             imprimirConRetardo("Yanina: Me contaron un poco más acerca de este lugar, por lo visto si queremos regresar a casa...\n", 20);
