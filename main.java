@@ -921,10 +921,171 @@ public class Main {
         imprimirConRetardo("--- El siguiente minijuego esta a 2km ---\n", 15);
         imprimirConRetardo("--- No pierdes tiempo y te pones a caminar ---\n", 15);
 
-
-
-        // Aquí siguiente minijuego
+         limpiarPantalla();
+        iniciarTrivial(sitio);
     }
+     public static void iniciarTrivial(Scanner sitio) throws InterruptedException {
+
+        limpiarPantalla();
+        imprimirConRetardo("--- Estas caminando, ya queda poco para llegar  ---\n", 15);
+        imprimirConRetardo("--- Te das cuenta que quedan solo quedan 100 metros para llegar al lugar del minijuego ---\n", 15);
+        imprimirConRetardo("--- Esta dentro del rencinto ferial  ---\n", 15);
+        imprimirConRetardo("--- ¿Tendrá algo que ver el lugar con el minijuego? ---\n", 15);
+
+        if (esGrupoYanina) {
+            imprimirConRetardo("Yanina: Un lugar como este sin gente verdaderamente da miedo\n", 15);
+            imprimirConRetardo("Yanina: Debemos darnos prisa y salir de aquí\n", 15);
+            imprimirConRetardo("--- Llegais al sitio del minijuego\n", 15);
+            imprimirConRetardo(" ... ", 15);
+
+        } else {
+
+            imprimirConRetardo("--- Un sitio como este es realmente frío sin gente ---\n", 15);
+            imprimirConRetardo("--- Debes darte prisa y llegar al minijuego ---\n", 15);
+            imprimirConRetardo("--- Llegas al sitio del minijuego ---\n", 15);
+
+        }
+
+        imprimirConRetardo("??: Bienvenidos jugadores\n", 15);
+        imprimirConRetardo("??: Os interesa saber que los minijuegos a completar son 4\n", 15);
+        imprimirConRetardo("??: Una vez los hayáis completado podréis encontrar respuestas sobre este mundo\n", 15);
+
+        limpiarPantalla();
+
+        System.out.println("|          MINIJUEGO: TRIVIAL          |");
+
+
+        imprimirConRetardo("Te adentras en una zona extraña del centro comercial y encuentras un viejo terminal activo.\n", 30);
+        imprimirConRetardo("Una voz automatizada resuena: 'Responde correctamente para demostrar tu valía y obtener suministros.'\n\n", 30);
+        pausa(2000);
+
+        int puntos = 0;
+        int respuesta;
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 1 de 6 ---" + RESET);
+        imprimirConRetardo("¿Cómo se llama la primera persona que te has encontrado?\n", 25);
+        imprimirConRetardo("  [1] Senna\n  [2] Amazonas\n  [3] Janeiro \n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 2) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+        pausa(1500);
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 2 de 6 ---" + RESET);
+        imprimirConRetardo("¿Cuál es tu límite máximo de puntos de vida (HP) al empezar?\n", 25);
+        imprimirConRetardo("  [1] 50\n  [2] 15\n  [3] 100\n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 3) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+        pausa(1500);
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 3 de 6 ---" + RESET);
+        imprimirConRetardo("¿Qué planeta es conocido como el planeta rojo?\n", 25);
+        imprimirConRetardo("  [1] Venus\n  [2] Marte\n  [3] Júpiter\n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 2) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+
+
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 4 de 6 ---" + RESET);
+        imprimirConRetardo("¿En qué año se creó Java?\n", 25);
+        imprimirConRetardo("  [1] 1995\n  [2] 2005\n  [3] 2010\n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 1) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+
+
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 5 de 6 ---" + RESET);
+        imprimirConRetardo("¿Cuántos lados tiene un hexágono?\n", 25);
+        imprimirConRetardo("  [1] 5\n  [2] 8\n  [3] 6\n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 3) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+
+
+
+        limpiarPantalla();
+        System.out.println(AMARILLO + "--- PREGUNTA 6 de 6 ---" + RESET);
+        imprimirConRetardo("¿Cuál es el océano más grande?\n", 25);
+        imprimirConRetardo("  [1] Atlántico\n  [2] Pacífico\n  [3] Índico\n", 20);
+        System.out.print("Elige una opción (1-3): ");
+
+        if (sitio.hasNextInt()) {
+            respuesta = sitio.nextInt();
+            if (respuesta == 2) {
+                imprimirConRetardo(VERDE + "¡Correcto!\n" + RESET, 20);
+                puntos++;
+            } else {
+                imprimirConRetardo(ROJO + "¡Incorrecto!\n" + RESET, 20);
+            }
+        }
+
+
+        limpiarPantalla();
+
+        System.out.println("           RESULTADO FINAL            ");
+
+        System.out.println("Puntuación obtenida: " + puntos + " / 6\n");
+
+        if (puntos >= 5) {
+            imprimirConRetardo(VERDE + "¡¡¡HAS GANADO EL TRIVIAL!!!\n" + RESET, 30);
+            imprimirConRetardo("El terminal se abre y te otorga un botiquín avanzado.\n", 30);
+            agregarAlInventario("Botiquín avanzado");
+            vidaJugador = Math.min(100, vidaJugador + 30);
+        } else {
+            imprimirConRetardo(ROJO + "No has conseguido los 5 puntos necesarios. El sistema emite una descarga eléctrica.\n" + RESET, 30);
+            vidaJugador -= 20;
+            imprimirConRetardo("Pierdes 20 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
+        }
+
+    }
+    
 }
 
 
