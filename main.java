@@ -1182,7 +1182,172 @@ public class main {
 
     }
 
+      public static boolean jugarAhorcado(Scanner scanner) throws InterruptedException {
+        limpiarPantalla();
 
+        System.out.println("|             AHORCADO           |");
+
+
+        imprimirConRetardo("X ha colgado a Yanina de una estructura metálica en lo alto del centro comercial.\n", 30);
+        imprimirConRetardo("Para descender la cuerda y salvarla a tiempo, debes adivinar la palabra secreta.\n\n", 30);
+        pausa(2000);
+
+        String palabraSecreta = "Despierta".toLowerCase();
+        char espacios = ' ';
+        StringBuilder palabraMostrada = new StringBuilder();
+
+
+        for (int i = 0; i < palabraSecreta.length(); i++) {
+            if (palabraSecreta.charAt(i) == espacios) {
+                palabraMostrada.append(" ");
+            } else {
+                palabraMostrada.append("_");
+            }
+        }
+
+        int intentos = 6;
+        boolean[] letrasAdivinadas = new boolean[palabraSecreta.length()];
+
+        while (intentos > 0 && palabraMostrada.toString().contains("_")) {
+            limpiarPantalla();
+            System.out.println(AMARILLO + "=== JUEGO DEL AHORCADO ===" + RESET);
+            System.out.println("  ------");
+            System.out.println("  |    |");
+            if (intentos <= 5) System.out.println("  O    |"); else System.out.println("       |");
+            if (intentos <= 3) System.out.println(" /|\\   |"); else if (intentos == 4) System.out.println(" /|    |"); else System.out.println("       |");
+            if (intentos <= 1) System.out.println(" / \\   |"); else if (intentos == 2) System.out.println(" /     |"); else System.out.println("       |");
+            System.out.println("       |");
+            System.out.println("-------");
+
+            System.out.println("\nPalabra actual: " + palabraMostrada);
+            System.out.println(ROJO + "Tienes " + intentos + " intentos restantes." + RESET);
+            System.out.print("Introduce una letra: ");
+
+            char letra = scanner.next().toLowerCase().charAt(0);
+            boolean letraCorrecta = false;
+
+            for (int i = 0; i < palabraSecreta.length(); i++) {
+                if (palabraSecreta.charAt(i) == letra && !letrasAdivinadas[i]) {
+                    letrasAdivinadas[i] = true;
+                    palabraMostrada.setCharAt(i, letra);
+                    letraCorrecta = true;
+                }
+            }
+
+            if (!letraCorrecta) {
+                intentos--;
+                imprimirConRetardo(ROJO + "Letra incorrecta. Te quedan " + intentos + " intentos.\n" + RESET, 20);
+                pausa(1000);
+            } else {
+                imprimirConRetardo(VERDE + "¡Bien! Has acertado una letra.\n" + RESET, 20);
+                pausa(1000);
+            }
+        }
+
+        limpiarPantalla();
+        if (palabraMostrada.toString().equals(palabraSecreta)) {
+            imprimirConRetardo(VERDE + "¡Felicidades! Has adivinado la palabra: " + palabraSecreta + "\n", 30);
+            imprimirConRetardo("La cuerda se afloja y consigues desatar a Yanina a tiempo. ¡Está a salvo!\n" + RESET, 30);
+            imprimirConRetardo("Yanina esta estable pero se ha desmayado\n" , 10);
+            imprimirConRetardo("--- Decides cargarla y llevarle a un sitio en el que puedas decansar ---\n" , 10);
+            imprimirConRetardo("--- Empiezas a caminar buscando algún sitio en el que ella pueda encontrarse bien  ---\n" , 10);
+            limpiarPantalla();
+            imprimirConRetardo("---Despues de un tiempo consigues encontrar un refugio ---\n" , 10);
+            imprimirConRetardo("--- La dejas ahi y es tiempo de avanzar ---\n" , 10);
+
+            pausa(3000);
+            return true;
+        } else {
+            imprimirConRetardo(ROJO + "¡Has perdido! La palabra era: " + palabraSecreta + "\n", 30);
+            imprimirConRetardo("No lo has conseguido a tiempo... Kyle se marcha riéndose mientras Yanina cae.\n" + RESET, 30);
+            vidaJugador -= 50;
+            imprimirConRetardo("El fracaso te deja devastado. Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
+            imprimirConRetardo("--- No hay tiempo para lamentare, necesitas hacer el siguiente juego que esta a 2km de aqui ---\n" , 10);
+
+            pausa(3000);
+            return false;
+        }
+
+    }
+
+    public static void eventoFinalKyle(Scanner sc) throws InterruptedException{
+        limpiarPantalla();
+        System.out.println("|          EL DESENLACE FINAL          |");
+        imprimirConRetardo("--- Empiezas a correr, con lo último has llegado a tu límite necesitas encontrar la respuesta ---\n" , 10);
+        imprimirConRetardo("--- Solo quedan 50m para entrar en el minijuego ---\n" , 10);
+        limpiarPantalla();
+        imprimirConRetardo("Kyle: viajero, este tu minijuego final\n" , 10);
+        imprimirConRetardo("Kyle: Gana y llegaras a tus propias conclusiones.\n" , 10);
+
+        boolean ganoPartida = false;
+
+        do {
+            limpiarPantalla();
+            System.out.println(AMARILLO + " FINAL: PIEDRA, PAPEL O TIJERA " + RESET);
+            System.out.println("0: 🗒️ Papel");
+            System.out.println("1: 🪨 Piedra");
+            System.out.println("2: ✂️ Tijera");
+            System.out.print("Elige tu opción (0-2): ");
+
+            int choosePlayer = -1;
+            if (sc.hasNextInt()) {
+                choosePlayer = sc.nextInt();
+                if (choosePlayer < 0 || choosePlayer > 2) {
+                    System.out.println(ROJO + "¡Error! Introduce un número entre 0 y 2." + RESET);
+                    pausa(1500);
+                    continue;
+                }
+            } else {
+                System.out.println(ROJO + "¡Error! Debes introducir un número válido." + RESET);
+                sc.next();
+                pausa(1500);
+                continue;
+            }
+
+            Random random = new Random();
+            int chooseRobot = random.nextInt(3);
+
+            limpiarPantalla();
+            if (choosePlayer == 0) System.out.println("Elegiste: 🗒️ Papel");
+            else if (choosePlayer == 1) System.out.println("Elegiste: 🪨 Piedra");
+            else if (choosePlayer == 2) System.out.println("Elegiste: ✂️ Tijera");
+
+            if (chooseRobot == 0) System.out.println("Kaiyun eligió: 🗒️ Papel");
+            else if (chooseRobot == 1) System.out.println("Kaiyun eligió: 🪨 Piedra");
+            else if (chooseRobot == 2) System.out.println("Kaiyun eligió: ✂️ Tijera");
+
+            System.out.println();
+
+            // Lógica de resultados de tu código
+            if (choosePlayer == chooseRobot) {
+                System.out.println(AMARILLO + "¡Empate! Kyle te obliga a elegir de nuevo." + RESET);
+                pausa(2000);
+            } else if ((choosePlayer == 0 && chooseRobot == 1) ||
+                    (choosePlayer == 1 && chooseRobot == 2) ||
+                    (choosePlayer == 2 && chooseRobot == 0)) {
+
+                System.out.println(VERDE + "FELICIDADES HAS GANADO " + RESET);
+                imprimirConRetardo("Kyle: Vaya... has demostrado que tienes \n", 35);
+                ganoPartida = true;
+                pausa(3000);
+
+            } else {
+                System.out.println(ROJO + "PIERDES EL DUELO" + RESET);
+                imprimirConRetardo("Kyle se impone ante ti y te obliga a elegir de nuevo bajo amenaza...\n", 35);
+
+            }
+
+        } while (!ganoPartida);
+
+        limpiarPantalla();
+
+        System.out.println("          FIN DE LA AVENTURA          ");
+
+        imprimirConRetardo("Has completado Dark Essence con éxito. Gracias por jugar.\n", 40);
+        pausa(3000);
+
+
+    }
 
 }
 
