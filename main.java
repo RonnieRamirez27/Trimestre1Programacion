@@ -625,7 +625,7 @@ public class main {
                 imprimirConRetardo(VERDE + "\n¡Has ganado la Partida " + numPartida + "!\n" + RESET, 30);
             } else {
                 vidaJugador -= 50;
-                imprimirConRetardo(ROJO + "\n¡Has perdido la Partida " + numPartida + "! Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n" + RESET, 30);
+                imprimirConRetardo(ROJO + "\n¡Has perdido la Partida " + numPartida + "! Pierdes 50 puntos de vida (DV). Vida actual: " + vidaJugador + "/100\n" + RESET, 30);
             }
 
 
@@ -643,7 +643,7 @@ public class main {
         }
 
         limpiarPantalla();
-        imprimirConRetardo("Has superado la primera prueba, mereces vivir, tu vida actual es:" + vidaJugador + " HP --- \n", 20);
+        imprimirConRetardo("Has superado la primera prueba, mereces vivir, tu vida actual es:" + vidaJugador + " DV --- \n", 20);
         imprimirConRetardo("--- No entiendes lo que esta pasando ---\n", 20);
         imprimirConRetardo("--- ¿Realmente habrías podido morir si no ganabas ese minijuego? ---\n", 20);
         imprimirConRetardo("--- Aún así has podido ganar y por lo visto seguir con vida ---\n", 20);
@@ -741,7 +741,7 @@ public class main {
             } else if (movimientos == 9) {
                 limpiarPantalla();
                 mostrarTablero(tablero);
-                System.out.println("¡Empate! (Cuenta como derrota para restar vida)");
+                System.out.println("¡Empate! (Cuenta como derrota para restar DVs)");
                 pausa(2000);
                 return false;
             } else {
@@ -795,7 +795,7 @@ public class main {
         System.out.println(AMARILLO + "+--------------------------------------+");
         System.out.println("|      ESTADO DE SALUD E INVENTARIO    |");
         System.out.println("+--------------------------------------+" + RESET);
-        System.out.println("Vida actual: " + vidaJugador + "/100\n");
+        System.out.println("Vida actual (DV): " + vidaJugador + "/100\n");
 
         imprimirConRetardo("¿Deseas revisar tu inventario y consumir un objeto curativo?\n", 25);
         imprimirConRetardo("  [1] Sí, abrir inventario y curarme\n", 20);
@@ -819,7 +819,7 @@ public class main {
                         if (tieneObjeto("Pescado cocinado")){
                         eliminarDelInventario("Pescado cocinado");
                         vidaJugador = Math.min(100, vidaJugador + 30);
-                        imprimirConRetardo(VERDE + "Has comido el pescado cocinado. Nueva vida: " + vidaJugador + "/100\n" + RESET, 30);
+                        imprimirConRetardo(VERDE + "Has comido el pescado cocinado. Nueva vida (DV): " + vidaJugador + "/100\n" + RESET, 30);
                         pausa(2000);
                         }else if (!tieneObjeto("Pescado cocinado")){
                         imprimirConRetardo(ROJO + "No tienes ningún pescado cocinado en el inventario.\n" + RESET, 30);
@@ -894,7 +894,7 @@ public class main {
 
 
                     vidaJugador = Math.min(100, vidaJugador + 25);
-                    imprimirConRetardo(VERDE + "Has recuperado 25 puntos de vida durmiendo. Vida actual: " + vidaJugador + "/100\n" + RESET, 30);
+                    imprimirConRetardo(VERDE + "Has recuperado 25 días de vida (DV) durmiendo. Vida actual (DV): " + vidaJugador + "/100\n" + RESET, 30);
                     pausa(2500);
                 } else {
                     imprimirConRetardo("--- Te alejas del hotel para buscar un sitio para descansar --- \n", 35);
@@ -951,7 +951,7 @@ public class main {
 
         limpiarPantalla();
 
-        System.out.println("|          MINIJUEGO: TRIVIAL          |");
+        System.out.println("|          MINIJUEGO: TRIVIA          |");
 
 
         imprimirConRetardo("Te adentras en una zona extraña del centro comercial y encuentras un viejo terminal activo.\n", 30);
@@ -980,7 +980,7 @@ public class main {
 
         limpiarPantalla();
         System.out.println(AMARILLO + "--- PREGUNTA 2 de 6 ---" + RESET);
-        imprimirConRetardo("¿Cuál es tu límite máximo de puntos de vida (HP) al empezar?\n", 25);
+        imprimirConRetardo("¿Cuál es tu límite máximo de días de vida (DV) al empezar?\n", 25);
         imprimirConRetardo("  [1] 50\n  [2] 15\n  [3] 100\n", 20);
         System.out.print("Elige una opción (1-3): ");
 
@@ -1073,18 +1073,18 @@ public class main {
         System.out.println("Puntuación obtenida: " + puntos + " / 6\n");
 
         if (puntos >= 5) {
-            imprimirConRetardo(VERDE + "¡¡¡HAS GANADO EL TRIVIAL!!!\n" + RESET, 30);
+            imprimirConRetardo(VERDE + "¡¡¡HAS GANADO EL TRIVIA!!!\n" + RESET, 30);
             imprimirConRetardo("El terminal se abre y te otorga un botiquín avanzado.\n", 30);
             agregarAlInventario("Botiquín avanzado");
             vidaJugador = Math.min(100, vidaJugador + 30);
         } else {
             imprimirConRetardo(ROJO + "No has conseguido los 5 puntos necesarios. El sistema emite una descarga eléctrica.\n" + RESET, 30);
             vidaJugador -= 50;
-            imprimirConRetardo("Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
+            imprimirConRetardo("Pierdes 50 días de vida (DV). Vida actual: " + vidaJugador + "/100\n", 30);
         }
     imprimirConRetardo("--- Parece que has sido la primera persona en superar este minijuego\n", 30);
         if (esGrupoYanina) {
-            imprimirConRetardo("--- Yannina deberia seguir jugando\n", 30);
+            imprimirConRetardo("--- Yanina deberia seguir jugando\n", 30);
 
         } else {
             imprimirConRetardo("--- No esperas a nadie, deberias seguir ---\n", 15);
@@ -1102,7 +1102,7 @@ public class main {
         imprimirConRetardo("?: ¿Podrías ayudarme?, Me llamo Rem\n",15);
         limpiarPantalla();
         imprimirConRetardo("¿Qué decides hacer?\n", 25);
-        imprimirConRetardo("  [1] Ayudar a REM antes de que juegue\n", 20);
+        imprimirConRetardo("  [1] Ayudar a Rem antes de que juegue\n", 20);
         imprimirConRetardo("  [2] No ayudarla y mantenerte al margen\n", 20);
         System.out.print("Elige una opción (1-2): ");
         int decisionRem = 2;
@@ -1119,7 +1119,7 @@ public class main {
             imprimirConRetardo( "--- Le das consejos y como responder ---\n" , 15);
             imprimirConRetardo("REM : ¡Muchísimas gracias!  \n", 15);
             imprimirConRetardo("REM : Porfavor acepta esto como agradecimiento \n", 15);
-            agregarAlInventario("Poción +70 DA");
+            agregarAlInventario("Poción +70 DV");
         } else {
             imprimirConRetardo("--- Decides no intervenir y observas desde la distancia ---\n", 15);
             imprimirConRetardo("--- Tras terminar, REM sigue su propio camino ---\n", 15);
@@ -1157,7 +1157,7 @@ public class main {
             limpiarPantalla();
             animacionCarga("--- Tras el rato junto al agua, te recuestas y duermes para recuperar energías ---");
             vidaJugador = Math.min(100, vidaJugador + 20);
-            imprimirConRetardo(VERDE + "[+] Has descansado bien. Tu vida actual es: " + vidaJugador + "/100\n" + RESET, 30);
+            imprimirConRetardo(VERDE + "[+] Has descansado bien. Tu vida (DV) actual es: " + vidaJugador + "/100\n" + RESET, 30);
             pausa(2000);
         }
         limpiarPantalla();
@@ -1259,7 +1259,7 @@ public class main {
             imprimirConRetardo(ROJO + "¡Has perdido! La palabra era: " + palabraSecreta + "\n", 30);
             imprimirConRetardo("No lo has conseguido a tiempo... Kyle se marcha riéndose mientras Yanina cae.\n" + RESET, 30);
             vidaJugador -= 50;
-            imprimirConRetardo("El fracaso te deja devastado. Pierdes 50 puntos de vida. Vida actual: " + vidaJugador + "/100\n", 30);
+            imprimirConRetardo("El fracaso te deja devastado. Pierdes 50 días de vida. Vida actual: " + vidaJugador + "/100\n", 30);
             imprimirConRetardo("--- No hay tiempo para lamentare, necesitas hacer el siguiente juego que esta a 2km de aqui ---\n" , 10);
 
             pausa(3000);
@@ -1311,7 +1311,7 @@ public class main {
             else if (choosePlayer == 1) System.out.println("Elegiste: 🪨 Piedra");
             else if (choosePlayer == 2) System.out.println("Elegiste: ✂️ Tijera");
 
-            if (chooseRobot == 0) System.out.println("Kaiyun eligió: 🗒️ Papel");
+            if (chooseRobot == 0) System.out.println("Kyle eligió: 🗒️ Papel");
             else if (chooseRobot == 1) System.out.println("Kaiyun eligió: 🪨 Piedra");
             else if (chooseRobot == 2) System.out.println("Kaiyun eligió: ✂️ Tijera");
 
@@ -1326,14 +1326,16 @@ public class main {
                     (choosePlayer == 2 && chooseRobot == 0)) {
 
                 System.out.println(VERDE + "FELICIDADES HAS GANADO " + RESET);
-                imprimirConRetardo("Kyle: Vaya... has demostrado que tienes \n", 35);
+                imprimirConRetardo("Kyle: Vaya... has demostrado que tienes mucha valentía\n", 35);
                 ganoPartida = true;
                 pausa(3000);
 
             } else {
                 System.out.println(ROJO + "PIERDES EL DUELO" + RESET);
-                imprimirConRetardo("Kyle se impone ante ti y te obliga a elegir de nuevo bajo amenaza...\n", 35);
-
+                imprimirConRetardo("Kyle es clara vencedora...\n", 35);
+                imprimirConRetardo("Pierdes de golpe todos tus DVs y mueres...\n", 35);
+                imprimirConRetardo(ROJO + "G A M E   O V E R\n",50);
+                break;
             }
 
         } while (!ganoPartida);
