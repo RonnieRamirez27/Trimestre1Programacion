@@ -74,6 +74,7 @@ Durante la aventura hay cuatro pruebas principales que el jugador debe superar:
 2. **Trivial:** hay que responder correctamente a seis preguntas. Para ganar se necesitan al menos cinco respuestas correctas.
 3. **Ahorcado:** hay que descubrir una palabra secreta antes de quedarse sin intentos. Esta prueba está relacionada con el secuestro de Yanina.
 4. **Piedra, papel o tijera:** es el enfrentamiento final contra Kyle. Hay que ganar para completar la aventura.
+5. **Pesca** usamos la caña de pescar que hemos ganado, para conseguir comida mientras descansamos.
 
 ---
 
