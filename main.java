@@ -1,8 +1,7 @@
-
 package menuInicio;
 
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 public class main {
 
@@ -19,7 +18,7 @@ public class main {
     public static int totalObjetos = 0;
     public static int vidaJugador = 100;
     public static boolean esGrupoYanina = false;
-
+    public static boolean esGrupoRem = false;
     public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
@@ -1176,12 +1175,9 @@ public class main {
             imprimirConRetardo("--- Antes de que puedas reaccionar, Kyle secuestra a uno de los participantes ---\n", 15);
             imprimirConRetardo("--- Parece aquella chica que viste el incio en el centro comercial ---\n", 15);
             imprimirConRetardo(AMARILLO + "Kyle : 'Si quieres salvarla, tendrás que jugar al famoso ahorcado'\n\n" + RESET, 15);
-            
-                  jugarAhorcado(sitio);
-            
         }
-
-
+            jugarAhorcado(sitio);
+            eventoFinalKyle(sitio);
     }
 
       public static boolean jugarAhorcado(Scanner scanner) throws InterruptedException {
@@ -1270,7 +1266,6 @@ public class main {
             return false;
         }
 
-          eventoFinalKyle(sitio);
 
     }
 
