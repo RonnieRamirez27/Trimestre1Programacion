@@ -921,9 +921,9 @@ public class Definitivo {
         imprimirConRetardo("--- No pierdes tiempo y te pones a caminar ---\n", 15);
 
         limpiarPantalla();
-        iniciarTrivial(sitio);
+        iniciarTrivia(sitio);
     }
-    public static void iniciarTrivial(Scanner sitio) throws InterruptedException {
+    public static void iniciarTrivia(Scanner sitio) throws InterruptedException {
 
         limpiarPantalla();
         imprimirConRetardo("--- Estas caminando, ya queda poco para llegar  ---\n", 15);
@@ -963,7 +963,7 @@ public class Definitivo {
 
         limpiarPantalla();
         System.out.println(AMARILLO + "--- PREGUNTA 1 de 6 ---" + RESET);
-        imprimirConRetardo("¿Cómo se llama la primera persona que te has encontrado?\n", 25);
+        imprimirConRetardo("¿Cuál es el río más largo del mundo?\n", 25);
         imprimirConRetardo("  [1] Senna\n  [2] Amazonas\n  [3] Janeiro \n", 20);
         System.out.print("Elige una opción (1-3): ");
 
